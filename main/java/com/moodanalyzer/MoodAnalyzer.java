@@ -10,9 +10,14 @@ public class MoodAnalyzer {
         this.message = message;
         return analyzeMood();
     }
-    public String analyzeMood(){
-            if (message.contains("sad"))
-                return "SAD";
-            return "Happy";
+    public String analyzeMood() {
+        try {
+        if (message.contains("sad"))
+            return "SAD";
+        return "HAPPY";
+        } catch (NullPointerException e) {
+            return "HAPPY";
+        }
+        }
     }
-}
+
